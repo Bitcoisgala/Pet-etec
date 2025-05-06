@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    color: #333;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ff6600;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+.voltar-btn {
+    display: inline-block;
+    background-color: white;
+    color: #ff6600;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ff6600;
+    transition: background-color 300ms;
+}
+
+.voltar-btn:hover {
+    background-color: #ffb84d;
+}
+
+.carrinho {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+}
+
+.produto {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.produto img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.produto .info {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.produto h3 {
+    font-size: 16px;
+    color: #333;
+}
+
+.produto p {
+    color: #ff6600;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.remove-btn {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+
+.remove-btn:hover {
+    background-color: #db5800;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.total p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.finalizar-btn {
+    background-color: #ff6600;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+
+.finalizar-btn:hover {
+    background-color: #db5800;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto;
+}

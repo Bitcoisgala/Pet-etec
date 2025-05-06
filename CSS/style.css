@@ -1,0 +1,416 @@
+body {
+
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: "Open Sans";
+
+}
+
+/* Inicio Header */
+/* Inicio barra de Navegação */
+
+header .navbar {
+
+    background-color: white;
+    width: 100%;
+
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    display: flex;
+    font-size: 16px;
+
+
+}
+
+.logo IMG {
+
+    height: 95px;
+    width: 95x;
+    margin-right: 100px;
+    margin-left: 80px;
+
+}
+
+header .barra_busca {
+
+    margin-top: 10px;
+    height: 2px;
+    width: 55%;
+    padding: 10px  0%;
+
+}
+
+.barra_busca img{
+
+    position: absolute;
+    height: 30px;
+    margin-top: 5px;
+    
+    padding-left: 5px;
+    padding-top: 5px;
+
+}
+
+header .barra_busca input {
+
+    height: 45px;
+    width: 100%;
+    border-radius: 15px;
+    padding-left: 40px;
+    border: 1px solid rgb(197, 197, 197);
+    outline: none;
+
+    font-size: 17px;
+
+    transition: border-color 400ms;
+
+}
+
+.barra_busca input:focus{
+
+    border-color: #ff6600;
+
+}
+
+header .parte_direita {
+
+    margin-top: 15px;
+    display: flex;
+    background-color: none;
+    margin-right: 80px;
+    position: absolute;
+    right: 0;
+
+}
+
+header .perfil_user img {
+
+    height: 40px;
+    width: 40px;
+    padding: 10px 10px;
+
+}
+
+header .carrinho img {
+
+    height: 40px;
+    width: 40px;
+    margin-left: 25px;
+    padding: 10px 9px;
+
+    transition: transform 300ms;
+
+}
+
+header .carrinho img:hover{
+
+    transform: scale(1.05);
+
+}
+
+/* Fim da barra de navegação */
+
+
+
+/* Inicio das categorias */
+
+.categorias{
+
+    width: 100%;
+    background-color: white;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+    
+}
+
+/* Fim categorias */
+
+
+
+/* Inicio config dropdown */
+
+.menu{
+
+    list-style: none;
+    display: flex;
+    margin-left: 80px;
+    margin-right: 80px;
+    justify-content: space-between;
+
+}
+
+.dropdown{
+
+    text-align: center;
+
+}
+
+.dropdown a{
+
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+    text-decoration: none;
+
+}
+
+.dropdown:hover{
+
+    text-decoration: underline 2px solid #ff6600;
+    text-underline-offset: 16.5px;
+
+}
+
+.dropdown:hover .submenu{
+
+    display: flex;
+
+}
+
+.submenu a{
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.submenu{
+
+    background-color: rgba(209, 209, 209, 0.5) ;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    left: 0;
+
+    margin-top: 15px;
+    position: absolute;
+    display: flex;
+    display: none;
+    z-index: 10;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+.submenu .coluna{
+
+    padding: 0;
+    list-style: none;
+
+}
+
+.perfil_user {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#perfil_usuario {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+#perfil_usuario:hover {
+    transform: scale(1.05);
+}
+
+.dropdown1 {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    z-index: 1000;
+    padding: 8px 0;
+}
+
+.dropdown1 a {
+    color: #333;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown1 a:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Fim Config Drpdown */
+/* Fim Header */
+
+
+
+/* Inicio Main */
+/* Inicio Config Carousel */
+
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 35px auto 0 auto;
+    overflow: hidden;
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    height: 450px;
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+  
+  
+  .slide img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slider-navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  .prev, .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2em;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .prev{margin-left: 10px;}
+  .next{margin-right: 10px;}
+
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+/* Fim Config Carousel */
+
+/* Inicio config card produtos */
+
+.product-cards {
+    margin: 0 auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.buy-btn{
+
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff6600;
+    color:white;
+    font-weight: 400;
+
+    transition: background-color 400ms;
+    transition: transform 300ms ease-in-out ;
+
+}
+
+.buy-btn:hover{
+    transform: scale(1.02);
+    background-color: #db5800;
+}
+
+/* Fim config card produtos */
+
+.titulo{
+
+    font-size: 30px;
+    padding-left: 50px;
+
+}
+
+/* Fim Main */
+
+/* Inicio Footer */
+
+footer {
+
+    background-color: #222;
+    color: #ccc;
+    margin: 0 auto;
+
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    width: 95%;
+    height: 90px;
+    
+    border-radius: 20px;
+
+  }
+
+/* Fim Footer */
+
+.notificacao {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(20px); }
+}

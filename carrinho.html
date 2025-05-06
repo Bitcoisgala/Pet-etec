@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="CSS/carrinho.css">
+</head>
+<body>
+    <header>
+        <h1>Carrinho de Compras</h1>
+        <a href="index.html" class="voltar-btn">Voltar à Loja</a>
+    </header>
+
+    <section class="carrinho" id="carrinhoContainer">
+        
+        <!-- Produtos serão inseridos aqui via JavaScript -->
+        <div class="total">
+            <p><strong>Total:</strong> R$ <span id="totalValue">0.00</span></p>
+            <button class="finalizar-btn">Finalizar Compra</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pet Shop - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        async function carregarCarrinho() {
+            const resposta = await fetch('BACKEND/carrinho_data.php');
+            const produtos = await resposta.json();
+
+            const carrinhoContainer = document.getElementById('carrinhoContainer');
+            let total = 0;
+
+            // Remove produtos antigos (caso recarregue)
+            carrinhoContainer.querySelectorAll('.produto').forEach(e => e.remove());
+
+            produtos.forEach(produto => {
+                const subtotal = produto.preco * produto.quantidade;
+                total += subtotal;
+
+                const div = document.createElement('div');
+                div.classList.add('produto');
+                div.setAttribute('data-id', produto.id);
+
+                div.innerHTML = `
+                    <img src="${produto.imagem}" alt="${produto.nome}">
+                    <div class="info">
+                        <h3>${produto.nome}</h3>
+                        <p>R$ ${produto.preco.toFixed(2)} x ${produto.quantidade}</p>
+                    </div>
+                    <button class="remove-btn" onclick="removerProduto(${produto.id})">Remover</button>
+                `;
+
+                carrinhoContainer.insertBefore(div, carrinhoContainer.querySelector('.total'));
+            });
+
+            document.getElementById('totalValue').textContent = total.toFixed(2);
+        }
+
+        async function removerProduto(produtoId) {
+            await fetch('BACKEND/remover_produto.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: `produto_id=${produtoId}`
+            });
+
+            carregarCarrinho();
+        }
+
+        window.onload = carregarCarrinho;
+    </script>
+    
+</body>
+</html>
